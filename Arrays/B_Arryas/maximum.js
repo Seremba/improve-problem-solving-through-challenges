@@ -10,7 +10,7 @@ let maximum = function(array){
     }
 
     let max = array[0]
-    for(let i = 0; i < array.length; i++){
+    for(let i = 1; i < array.length; i++){
         let el = array[i];
         if(el > max){
             max = el;
