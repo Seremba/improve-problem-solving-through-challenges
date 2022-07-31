@@ -14,5 +14,15 @@ let reverseArray = function(array){
 
    return newArray;
 };
-console.log(reverseArray(["zero", "one", "two", "three"])); // ['three', 'two', 'one', 'zero']
-console.log(reverseArray([7, 1, 8])); // [8, 1, 7]
+// or
+
+let reversedArray = function(array){
+    let reverse = [];
+    for(let i = 0; i < array.length; i++){
+        reverse.unshift(array[i])
+    }
+
+    return reverse;
+}
+console.log(reversedArray(["zero", "one", "two", "three"])); // ['three', 'two', 'one', 'zero']
+console.log(reversedArray([7, 1, 8])); // [8, 1, 7]
