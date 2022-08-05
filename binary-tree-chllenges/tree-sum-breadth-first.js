@@ -20,8 +20,8 @@ const treeSum = (root) => {
        let current = queue.shift();
        sum += current.val;
 
-       if(current.left)queue.push(current.left);
-       if(current.right)queue.push(current.right);
+       if(current.left !== null)queue.push(current.left);
+       if(current.right !== null)queue.push(current.right);
    }
  return sum;
 }
