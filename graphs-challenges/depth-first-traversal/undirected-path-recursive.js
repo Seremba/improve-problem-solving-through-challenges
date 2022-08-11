@@ -15,7 +15,7 @@ const undirectedPath = (edges,nodeA,nodeB) => {
 
 const hasPath = (graph, src, dst, visited) => {
     if(src === dst) return true;
-    if(visited.has(src)) return true;
+    if(visited.has(src)) return false;
     visited.add(src);
 
    for(let neighbor of graph[src]){
@@ -40,12 +40,23 @@ const buildGraph = (edges) => {
     return graph;
 }
 
-const edges = [
-  ['i', 'j'],
-  ['k', 'i'],
-  ['m', 'k'],
-  ['k', 'l'],
-  ['o', 'n']
-];
+// const edges = [
+//   ['i', 'j'],
+//   ['k', 'i'],
+//   ['m', 'k'],
+//   ['k', 'l'],
+//   ['o', 'n']
+// ];
 
-console.log(undirectedPath(edges, 'j', 'm')); // -> true
+// console.log(undirectedPath(edges, 'j', 'm')); // -> true
+
+
+const edges = [
+    ['i', 'j'],
+    ['k', 'i'],
+    ['m', 'k'],
+    ['k', 'l'],
+    ['o', 'n']
+  ];
+
+  console.log(undirectedPath(edges, 'k', 'o')); // -> false
