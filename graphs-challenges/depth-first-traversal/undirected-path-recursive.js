@@ -40,15 +40,15 @@ const buildGraph = (edges) => {
     return graph;
 }
 
-// const edges = [
-//   ['i', 'j'],
-//   ['k', 'i'],
-//   ['m', 'k'],
-//   ['k', 'l'],
-//   ['o', 'n']
-// ];
+const edgess = [
+  ['i', 'j'],
+  ['k', 'i'],
+  ['m', 'k'],
+  ['k', 'l'],
+  ['o', 'n']
+];
 
-// console.log(undirectedPath(edges, 'j', 'm')); // -> true
+console.log(undirectedPath(edgess, 'j', 'm')); // -> true
 
 
 const edges = [
