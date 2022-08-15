@@ -6,30 +6,32 @@ An island is a vertically or horizontally connected region of land.
 */
 
 const islandCount = (grid) => {
-    const visited = new Set();
-    let count = 0;
-    for(let row = 0; row < grid.length; row += 1){
-        for(let col = 0; grid[0].length; col += 1){
-            if (explore(grid, row, col, visited) === true){
-                count += 1;
-            }
-        }
+  let visited = new Set();
+
+  let count = 0;
+  for(let row = 0; row < grid.length; row += 1){
+    for(let col = 0; col < grid[0].length; col += 1) {
+       let isIslandFound = explore(grid, row, col, visited);
+       if(isIslandFound === true){
+         count += 1;
+       }
     }
-    return count;
+  }
+
+  return count;
 }
 
 const explore = (grid, row, col, visited) => {
-  const rowBounds = 0 <= row && row < grid.length;
-  const colBounds = 0 <= col && col < grid[0].length;
-  if(!rowBounds || !colBounds) return false;
+  const rowInbounds = 0 <= row && row < grid.length;
+  const colInbounds = 0 <= col && col < grid[0].length;
+  if(!rowInbounds || !colInbounds) return false;
 
-  if(grid[row][col] === 'W') return false;
+  if(grid[row][col] === "W") return false;
 
   const psn = row + "," + col;
-//   console.log(psn);
   if(visited.has(psn)) return false;
   visited.add(psn);
-//   console.log(visited)
+
   explore(grid, row - 1, col, visited);
   explore(grid, row + 1, col, visited);
   explore(grid, row, col - 1, visited);
