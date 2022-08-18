@@ -9,17 +9,21 @@ You may use an element of the array as many times as needed. You may assume that
 numbers are non negative.
 */
 
-const canSum = (targetSum, numbers) => {
+const canSum = (targetSum, numbers, memo = {}) => {
+    if(targetSum in memo) return memo[targetSum];
     if(targetSum === 0) return true;
     if(targetSum < 0) return false;
 
     for(let num of numbers){
         const remainder = targetSum - num;
 
-        if(canSum(remainder, numbers) === true){
+        if(canSum(remainder, numbers, memo) === true){
+            memo[targetSum] = true;
             return true;
         }
     }
+
+    memo[targetSum] = false;
 
     return false;
 }
