@@ -9,20 +9,22 @@ should represent one combination that constructs the target.
 You may reuse elements of the wordBank as many times as needed.
 */
 
-const allConstruct = (target, wordBank) => {
+const allConstruct = (target, wordBank, memo={}) => {
+    if(target in memo) return memo[target];
     if(target === '') return [[]];
 
     let result = [];
     for(let word of wordBank) {
         if(target.indexOf(word) === 0) {
             const suffix = target.slice(word.length);
-            const suffixWays = allConstruct(suffix, wordBank);
+            const suffixWays = allConstruct(suffix, wordBank, memo);
             const targetWays = suffixWays.map(way => [word, ...way]);
             result.push(...targetWays);
         }
     }
 
-    return result;
+    memo[target] = result;
+    return memo[target];
 }
 
 
