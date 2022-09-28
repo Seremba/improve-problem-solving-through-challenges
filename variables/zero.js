@@ -1,5 +1,6 @@
-let location = "Brookly, " + "NY";
-console.log(location) // Brookly, NY
+let location = "Kampala " + "Uganda";
+console.log(location)
 
-let quantity = 4 * 5 + 1;
-console.log(quantity) // 21
+let quantity = 4 * 1 + 5;
+
+console.log(quantity)

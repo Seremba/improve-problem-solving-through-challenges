@@ -1,4 +1,6 @@
-let movie = "War Room";
-let views = 3;
+let movie = "Vampire Dairies";
+let views = 4;
 
-console.log("I watched " + movie + " about " + views + " times")
+console.log("I watched " + movie + " " + views + " number of times")
+
+// I watched movie view number of times
