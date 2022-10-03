@@ -18,3 +18,16 @@ const merge = (array1, array2) => {
 
   return merged;
 };
+
+const mergeSort = (array) => {
+  if (array.length <= 1) {
+    return array;
+  }
+
+  let midIndex = Math.floor(array.length / 2);
+  let leftHalf = array.slice(0, midIndex);
+  let rightHalf = array.slice(midIndex);
+
+  let sortedLeft = mergeSort(leftHalf);
+  let sortedRight = mergeSort(rightHalf);
+};
