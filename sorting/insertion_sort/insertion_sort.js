@@ -8,7 +8,7 @@ function insertionSort(arr) {
     let currElement = arr[i];
 
     // the `j` loop will iterate left through the sorted region,
-    // looking for a legal spot to insert currElement
+    // looking for a legal spot to insert currElement/////-
     for (var j = i - 1; j >= 0 && currElement < arr[j]; j--) {
       // keep moving left while currElement is less than the j-th element
 
