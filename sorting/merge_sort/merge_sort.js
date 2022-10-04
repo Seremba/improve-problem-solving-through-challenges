@@ -10,7 +10,7 @@ const merge = (array1, array2) => {
     if (el1 < el2) {
       next = array1.shift();
     } else {
-      next = array2.next();
+      next = array2.shift();
     }
 
     merged.push(next);
@@ -30,4 +30,8 @@ const mergeSort = (array) => {
 
   let sortedLeft = mergeSort(leftHalf);
   let sortedRight = mergeSort(rightHalf);
+
+  return merge(sortedLeft, sortedRight);
 };
+
+console.log(mergeSort([15, 5, 24, 8, 1, 3, 16, 10, 20]));
